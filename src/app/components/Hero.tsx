@@ -1,4 +1,4 @@
-import { ArrowRight, Download, CheckCircle2, TrendingUp, Briefcase } from "lucide-react";
+import { ArrowRight, Download, CheckCircle2, TrendingUp, Briefcase, CheckCircle2Icon, LucideCheckCircle } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const heroImage1 = '/hero.png';
@@ -23,7 +23,7 @@ export function Hero() {
           <div className="flex flex-col gap-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white border border-green-200 rounded-full px-4 py-1.5 w-fit shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse"></span>
+                                <LucideCheckCircle size={14} className="text-[#16a34a]" />
               <span className="text-sm text-[#0d2137]" style={{ fontWeight: 500 }}>
                 Available for Opportunities
               </span>
@@ -127,11 +127,16 @@ export function Hero() {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>TypeScript</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>React Expert</span>
+                </div>
+                
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 size={14} className="text-[#16a34a]" />
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Flutter Expert</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Flutter / Dart</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>UI/UX designer</span>
                 </div>
               </div>
             </div>
