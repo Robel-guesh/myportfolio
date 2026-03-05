@@ -36,13 +36,14 @@ export function About() {
             <div className="flex items-start gap-4 mb-6">
               <div className="w-14 h-14 rounded-2xl bg-[#16a34a] flex items-center justify-center shadow-md flex-shrink-0">
                 <User size={24} className="text-white" />
+                
               </div>
               <div>
                 <h3 className="text-[#0d2137]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>
                   {aboutData.name}
                 </h3>
                 <p className="text-[#16a34a] text-sm" style={{ fontWeight: 500 }}>
-                  Backend Developer & Full-Stack Engineer
+                  Full-Stack web and mobile app developer
                 </p>
               </div>
             </div>
@@ -111,10 +112,10 @@ export function About() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Backend Projects", value: "5+", color: "#16a34a" },
+                { label: "Projects", value: "15+", color: "#16a34a" },
                 { label: "Mobile Apps", value: "3+", color: "#0d2137" },
-                { label: "Years of Study", value: "4 Yrs", color: "#0d2137" },
-                { label: "Technologies", value: "15+", color: "#16a34a" },
+                { label: "Years of Study", value: "5 Yrs", color: "#0d2137" },
+                { label: "Technologies", value: "8+", color: "#16a34a" },
               ].map((stat) => (
                 <div
                   key={stat.label}

@@ -60,14 +60,14 @@ export function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="https://github.com/robelguesh"
+                href="https://github.com/Robel-guesh/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white/70 hover:text-[#16a34a] text-sm transition-colors"
                 style={{ fontWeight: 500 }}
               >
                 <Github size={15} />
-                github.com/robelguesh
+                github.com/Robel-guesh
               </a>
               <a
                 href="mailto:robelguesh21@gmail.com"

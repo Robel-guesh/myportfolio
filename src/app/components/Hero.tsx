@@ -40,13 +40,13 @@ export function Hero() {
                 and Modern Software
               </h1>
               <p className="mt-3 text-[#16a34a] text-lg" style={{ fontWeight: 600 }}>
-                Backend Developer · Node.js · TypeScript · Full-Stack
+                Full-stack Developer · Flutter · Nodejs · React · Tkinter
               </p>
             </div>
 
             {/* Description */}
             <p className="text-[#4a5568] text-base leading-relaxed max-w-xl">
-              I am <span style={{ fontWeight: 600 }} className="text-[#0d2137]">Robel Guesh Tsehaye</span>, an Information Technology graduate and software developer specializing in backend development, full-stack web applications, and UI/UX design.
+              I am <span style={{ fontWeight: 600 }} className="text-[#0d2137]">Robel Guesh Tsehaye</span>, an Information Technology graduate and software developer specializing in Full-stack development, full-stack web and mobile applications, and UI/UX design.
             </p>
 
             {/* Buttons */}
@@ -73,12 +73,12 @@ export function Hero() {
             {/* Stats */}
             <div className="flex flex-wrap gap-6 mt-2">
               <div>
-                <p className="text-[#0d2137]" style={{ fontSize: "1.5rem", fontWeight: 700, lineHeight: 1.2 }}>3+</p>
+                <p className="text-[#0d2137]" style={{ fontSize: "1.5rem", fontWeight: 700, lineHeight: 1.2 }}>2+</p>
                 <p className="text-[#6b7280] text-sm">Years Experience</p>
               </div>
               <div className="w-px bg-gray-200" />
               <div>
-                <p className="text-[#0d2137]" style={{ fontSize: "1.5rem", fontWeight: 700, lineHeight: 1.2 }}>10+</p>
+                <p className="text-[#0d2137]" style={{ fontSize: "1.5rem", fontWeight: 700, lineHeight: 1.2 }}>15+</p>
                 <p className="text-[#6b7280] text-sm">Projects Completed</p>
               </div>
               <div className="w-px bg-gray-200" />

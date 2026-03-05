@@ -8,7 +8,7 @@ const skillCategories = [
     color: "#3b82f6",
     bg: "#eff6ff",
     border: "#bfdbfe",
-    skills: ["React.js", "Bootstrap"],
+    skills: ["React.js", "Bootstrap","Tailwind CSS"],
   },
   {
     id: "backend",
@@ -17,7 +17,7 @@ const skillCategories = [
     color: "#16a34a",
     bg: "#f0fdf4",
     border: "#bbf7d0",
-    skills: ["Node.js", "Express.js", "TypeScript"],
+    skills: ["Node.js", "Express.js"],
   },
   {
     id: "mobile",
@@ -26,7 +26,7 @@ const skillCategories = [
     color: "#8b5cf6",
     bg: "#f5f3ff",
     border: "#ddd6fe",
-    skills: ["Flutter", "Dart"],
+    skills: ["Flutter", "Dart","react native"],
   },
   {
     id: "databases",
@@ -35,7 +35,7 @@ const skillCategories = [
     color: "#f59e0b",
     bg: "#fffbeb",
     border: "#fde68a",
-    skills: ["MongoDB", "MySQL", "Firebase"],
+    skills: ["MongoDB", "MySQL", "Firebase","Postgres","supabase"],
   },
   {
     id: "tools",
@@ -53,7 +53,7 @@ const skillCategories = [
     color: "#0d2137",
     bg: "#f0f7f4",
     border: "#a7f3d0",
-    skills: ["Python", "JavaScript", "Dart"],
+    skills: ["Python", "JavaScript", "Dart","java",'c++'],
   },
 ];
 

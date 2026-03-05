@@ -14,6 +14,18 @@ const projects = [
     accent: "#16a34a",
     accentBg: "#f0fdf4",
   },
+   {
+    id: 1,
+    title: "Dr tesfa Dermatology Clinic's website",
+    description:
+      "A website made with React, Express.js, and MongoDB. used to advertise the clinic",
+    image: "https://admin.drtesfadermatologyclinic.com/uploads/1772458083913.png",
+    tags: ["React", "Express.js", "MongoDB", "Node.js"],
+    link: "https://drtesfadermatologyclinic.com/",
+    hasLink: true,
+    accent: "#16a34a",
+    accentBg: "#f0fdf4",
+  },
   {
     id: 2,
     title: "Bank of Abyssinia Mobile App Clone",

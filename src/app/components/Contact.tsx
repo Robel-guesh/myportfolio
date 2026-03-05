@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Github,Linkedin } from "lucide-react";
 
 const contactItems = [
   {
@@ -13,8 +13,8 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+251 9__ ___ ___",
-    href: "tel:+251900000000",
+    value: "+251 943667642",
+    href: "tel:+251943667642",
     color: "#3b82f6",
     bg: "#eff6ff",
     border: "#bfdbfe",
@@ -23,7 +23,7 @@ const contactItems = [
     icon: MapPin,
     label: "Location",
     value: "Addis Ababa, Ethiopia",
-    href: "https://maps.google.com/?q=Addis+Ababa,+Ethiopia",
+    href: "https://maps.app.goo.gl/9ZqZLkms52D2gtVv5",
     color: "#f59e0b",
     bg: "#fffbeb",
     border: "#fde68a",
@@ -31,12 +31,22 @@ const contactItems = [
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/robelguesh",
-    href: "https://github.com/robelguesh",
+    value: "github.com/Robel-guesh",
+    href: "https://github.com/Robel-guesh",
     color: "#0d2137",
     bg: "#f8fafc",
     border: "#e2e8f0",
   },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/robelguesh",
+    href: "https://www.linkedin.com/in/robelguesh/",
+     color: "#3b82f6",
+    bg: "#eff6ff",
+    border: "#bfdbfe",
+  },
+  
 ];
 
 export function Contact() {
