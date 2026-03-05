@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Code2 } from "lucide-react";
-
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -47,17 +47,17 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+       
           <button
             onClick={() => scrollTo("#home")}
             className="flex items-center gap-2 group cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#16a34a] flex items-center justify-center shadow-sm">
-              <Code2 size={16} className="text-white" />
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-sm">
+              <ImageWithFallback src='/robel.png' alt="logo" ></ImageWithFallback>
             </div>
             <span className="text-[#0d2137] tracking-tight">
               <span style={{ fontWeight: 700 }}>Robel</span>
-              <span className="text-[#16a34a]" style={{ fontWeight: 700 }}>.dev</span>
+              <span className="text-[#16a34a]" style={{ fontWeight: 700 }}> Guesh</span>
             </span>
           </button>
 

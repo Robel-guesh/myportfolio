@@ -1,5 +1,5 @@
 import { Code2, Github, Mail, ArrowUp } from "lucide-react";
-
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 const scrollTo = (id: string) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -22,15 +22,11 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#16a34a] flex items-center justify-center">
-                <Code2 size={16} className="text-white" />
-              </div>
-              <span style={{ fontWeight: 700, fontSize: "1.1rem" }}>
-                Robel<span className="text-[#16a34a]">.dev</span>
-              </span>
+                              <ImageWithFallback src='/robel.png' alt="robel" className="h-25"></ImageWithFallback>
+              
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Backend Developer & Full-Stack Engineer specializing in Node.js, TypeScript, and Flutter. Building scalable, modern software.
+              Full-Stack Developer specializing in Node.js, React, and Flutter. Building scalable, modern software.
             </p>
           </div>
 

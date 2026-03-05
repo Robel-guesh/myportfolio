@@ -7,8 +7,9 @@ const experiences = [
     role: "Software Developer",
     period: "Jan 2024 – Aug 2025",
     icon: Briefcase,
-    color: "#16a34a",
-    bg: "#f0fdf4",
+     color: "#9900cc",
+    bg: "#f5f3ff",
+    
     border: "#bbf7d0",
     description:
       "Developed IC School Management System using React, Express.js and MongoDB. Handled student registration, scheduling, attendance tracking, and payment management.",
@@ -20,8 +21,9 @@ const experiences = [
     role: "Software Developer",
     period: "Aug 2024 – Aug 2025",
     icon: Globe,
-    color: "#3b82f6",
-    bg: "#eff6ff",
+    color: "#16a34a",
+    bg: "#f0fdf4",
+  
     border: "#bfdbfe",
     description:
       "Worked on multiple client web projects, delivering modern, responsive websites and web applications for businesses across various industries.",
@@ -38,8 +40,8 @@ const experiences = [
     role: "Mobile App Developer",
     period: "Sep 2025 – Present",
     icon: Smartphone,
-    color: "#8b5cf6",
-    bg: "#f5f3ff",
+     color: "#3b82f6",
+    bg: "#eff6ff",
     border: "#ddd6fe",
     description:
       "Developing mobile applications using Flutter for logistics and transportation industry clients. Built a truck logistics mobile app and a ride hailing application.",

@@ -3,58 +3,92 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const projects = [
   {
-    id: 1,
-    title: "IC School Management System",
-    description:
-      "A comprehensive school management platform built with React, Express.js, and MongoDB. Handles student registration, scheduling, attendance tracking, and payment management.",
-    image: "https://images.unsplash.com/photo-1558092535-648ec3c50158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBtYW5hZ2VtZW50JTIwc3lzdGVtJTIwZGFzaGJvYXJkJTIwVUl8ZW58MXx8fHwxNzcyNjk3OTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    tags: ["React", "Express.js", "MongoDB", "Node.js"],
-    link: "https://www.e-student.icdigitals.com/",
-    hasLink: true,
-    accent: "#16a34a",
-    accentBg: "#f0fdf4",
-  },
-   {
-    id: 1,
-    title: "Dr tesfa Dermatology Clinic's website",
-    description:
-      "A website made with React, Express.js, and MongoDB. used to advertise the clinic",
-    image: "https://admin.drtesfadermatologyclinic.com/uploads/1772458083913.png",
-    tags: ["React", "Express.js", "MongoDB", "Node.js"],
-    link: "https://drtesfadermatologyclinic.com/",
-    hasLink: true,
-    accent: "#16a34a",
-    accentBg: "#f0fdf4",
-  },
+  id: 1,
+  title: "IC School Management System",
+  description:
+    "A full-featured school management platform built with React, Express.js, and MongoDB. It manages student registration, class scheduling, attendance tracking, and payment processing through an intuitive dashboard for administrators and staff.",
+  image: "https://backend.lulsoft.com/uploads/1762337670342.jpg",
+  tags: ["React", "Express.js", "MongoDB", "Node.js"],
+  link: "https://www.e-student.icdigitals.com/",
+  githubLink:"https://github.com/Robel-guesh/IcSoftwareSolutions",
+  hasLink: true,
+  accent: "#9900cc",
+  accentBg: "#faf5ff",
+},
+{
+  id: 2,
+  title: "Lulsoft Company Website",
+  description:
+    "A modern company website built with React, Express.js, and MongoDB to showcase software development services, company projects, and provide a professional online presence for the business.",
+  image: "https://backend.lulsoft.com/uploads/1761850886797.png",
+  tags: ["React", "Express.js", "MongoDB", "Node.js"],
+  link: "https://www.lulsoft.com/",
+  githubLink: "https://github.com/Robel-guesh/lulsoft",
+  hasLink: true,
+  accent: "#76b400",
+  accentBg: "#f7feff",
+},
+  
+{
+  id: 3,
+  title: "Dr. Tesfa Dermatology Clinic Website",
+  description:
+    "A modern dermatology clinic website built with React, Express.js, and MongoDB to present skincare services, clinic information, and provide an easy way for patients to learn about treatments and contact the clinic.",
+  image: "https://admin.drtesfadermatologyclinic.com/uploads/1772458083913.png",
+  tags: ["React", "Express.js", "MongoDB", "Node.js"],
+  link: "https://drtesfadermatologyclinic.com/",
+  githubLink: "https://github.com/Robel-guesh/Dermatology-Website",
+  hasLink: true,
+  accent: "orange",
+  accentBg: "#fff7ed",
+},
+ {
+  id: 4,
+  title: "Sun Dental Clinic Mekelle Website",
+  description:
+    "A modern clinic website built with React, Express.js, and MongoDB to showcase dental services, provide clinic information, and help patients easily connect with the clinic online.",
+  image: "https://backend.sundentalclinicmekelle.com/uploads/1745585484991.png",
+  tags: ["React", "Express.js", "MongoDB", "Node.js"],
+  link: "https://www.sundentalclinicmekelle.com/",
+    githubLink: "https://github.com/Robel-guesh/SunDental",
+
+  hasLink: true,
+  accent: "#001aff",
+  accentBg: "#f5f7ff",
+},
+  
   {
-    id: 2,
+    id: 5,
     title: "Bank of Abyssinia Mobile App Clone",
     description:
       "A feature-rich mobile banking application clone built with Flutter and Dart. Implements modern UI patterns, account management, transfers, and transaction history.",
-    image: "https://images.unsplash.com/photo-1726137065519-c9a1b9eca951?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5raW5nJTIwbW9iaWxlJTIwYXBwJTIwZmludGVjaHxlbnwxfHx8fDE3NzI2OTc5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://play-lh.googleusercontent.com/18z-FSNTswVVYQrsntytpdqjpdf7oc1IBksbhpOrqeAidzg6XR-iRt0iAnFqD5WAFqya=w526-h296",
     tags: ["Flutter", "Dart", "Mobile", "UI/UX"],
     link: "#",
+    githubLink: "https://github.com/Robel-guesh/abysiniamobileapp",
+
     hasLink: false,
-    accent: "#3b82f6",
-    accentBg: "#eff6ff",
+    accent: "orange",
+  accentBg: "#fff7ed",
   },
   {
-    id: 3,
+    id: 6,
     title: "EQUB Management System",
     description:
       "A desktop application for managing the traditional Ethiopian EQUB savings system. Built with Python Tkinter, it handles member registration, contributions, and lottery management.",
-    image: "https://images.unsplash.com/photo-1590482930637-c8d907ce02bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMG1hbmFnZW1lbnQlMjBzb2Z0d2FyZXxlbnwxfHx8fDE3NzI2OTc5NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://github.com/Robel-guesh/Equb/blob/main/image/background_photo.png?raw=true",
     tags: ["Python", "Tkinter", "Desktop", "Database"],
-    link: "#",
+    link: "https://github.com/Robel-guesh/Equb",
+    githubLink: "https://github.com/Robel-guesh/Equb",
     hasLink: false,
-    accent: "#8b5cf6",
-    accentBg: "#f5f3ff",
+    accent: "#00DF3F",
+  accentBg: "#f7feff",
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #f0f7f4 100%)" }} className="py-20">
+    <section id="projects" style={{ background: "linear-gradient(180deg, #f7feff 0%, #fff7ed 100%)" }} className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -82,7 +116,7 @@ export function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent" />
                 {/* Overlay links */}
                 <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   {project.hasLink && (
@@ -95,9 +129,11 @@ export function Projects() {
                       <ExternalLink size={14} className="text-[#0d2137]" />
                     </a>
                   )}
-                  <button className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur flex items-center justify-center shadow hover:bg-white transition-colors cursor-pointer">
+                     
+                     
+                  <a href={project?.githubLink}  target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur flex items-center justify-center shadow hover:bg-white transition-colors cursor-pointer">
                     <Github size={14} className="text-[#0d2137]" />
-                  </button>
+                  </a>
                 </div>
               </div>
 

@@ -1,4 +1,5 @@
 import { MapPin, Mail, GraduationCap, Award, User } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const aboutData = {
   name: "Robel Guesh Tsehaye",
@@ -34,9 +35,10 @@ export function About() {
           {/* Profile Card */}
           <div className="bg-gradient-to-br from-[#f0f7f4] to-[#eef6ff] rounded-2xl p-8 border border-green-100 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-[#16a34a] flex items-center justify-center shadow-md flex-shrink-0">
-                <User size={24} className="text-white" />
-                
+              <div className="w-14 h-14  flex items-center justify-center  flex-shrink-0">
+                {/* <User size={24} className="text-white" /> */}
+                <ImageWithFallback src='/robel.png' alt="robel"></ImageWithFallback>
+              
               </div>
               <div>
                 <h3 className="text-[#0d2137]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>
@@ -56,7 +58,7 @@ export function About() {
               <div className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
                 <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
                   <MapPin size={15} className="text-[#16a34a]" />
-                </div>
+                  </div>
                 <div>
                   <p className="text-[#9ca3af] text-xs" style={{ fontWeight: 500 }}>Location</p>
                   <p className="text-[#0d2137] text-sm" style={{ fontWeight: 600 }}>{aboutData.location}</p>
