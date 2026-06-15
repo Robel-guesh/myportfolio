@@ -33,7 +33,7 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Profile Card */}
-          <div className="bg-gradient-to-br from-[#f0f7f4] to-[#eef6ff] rounded-2xl p-8 border border-green-100 shadow-sm">
+          <div className="bg-gradient-to-br from-[#FDFDFD] to-[#F7FCF9] rounded-2xl p-8 border border-green-100 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
               <div className="w-14 h-14  flex items-center justify-center  flex-shrink-0">
                 {/* <User size={24} className="text-white" /> */}
@@ -87,8 +87,8 @@ export function About() {
           <div className="flex flex-col gap-6">
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 rounded-xl bg-[#0d2137] flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <GraduationCap size={22} className="text-white" />
+                <div className="w-12 h-12 rounded-xl  flex items-center justify-center flex-shrink-0 ">
+                  <GraduationCap size={22} className="text-[#00CD4F]" />
                 </div>
                 <div>
                   <p className="text-[#9ca3af] text-xs mb-0.5" style={{ fontWeight: 500 }}>Education</p>

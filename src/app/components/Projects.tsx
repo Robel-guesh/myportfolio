@@ -1,75 +1,129 @@
+import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const projects = [
-  {
-  id: 1,
-  title: "IC School Management System",
-  description:
-    "A full-featured school management platform built with React, Express.js, and MongoDB. It manages student registration, class scheduling, attendance tracking, and payment processing through an intuitive dashboard for administrators and staff.",
-  image: "https://backend.lulsoft.com/uploads/1762337670342.jpg",
-  tags: ["React", "Express.js", "MongoDB", "Node.js"],
-  link: "https://www.e-student.icdigitals.com/",
-  githubLink:"https://github.com/Robel-guesh/IcSoftwareSolutions",
-  hasLink: true,
-  accent: "#9900cc",
-  accentBg: "#faf5ff",
-},
-{
-  id: 2,
-  title: "Lulsoft Company Website",
-  description:
-    "A modern company website built with React, Express.js, and MongoDB to showcase software development services, company projects, and provide a professional online presence for the business.",
-  image: "https://backend.lulsoft.com/uploads/1761850886797.png",
-  tags: ["React", "Express.js", "MongoDB", "Node.js"],
-  link: "https://www.lulsoft.com/",
-  githubLink: "https://github.com/Robel-guesh/lulsoft",
-  hasLink: true,
-  accent: "#76b400",
-  accentBg: "#f7feff",
-},
-  
-{
-  id: 3,
-  title: "Dr. Tesfa Dermatology Clinic Website",
-  description:
-    "A modern dermatology clinic website built with React, Express.js, and MongoDB to present skincare services, clinic information, and provide an easy way for patients to learn about treatments and contact the clinic.",
-  image: "https://admin.drtesfadermatologyclinic.com/uploads/1772458083913.png",
-  tags: ["React", "Express.js", "MongoDB", "Node.js"],
-  link: "https://drtesfadermatologyclinic.com/",
-  githubLink: "https://github.com/Robel-guesh/Dermatology-Website",
-  hasLink: true,
-  accent: "orange",
-  accentBg: "#fff7ed",
-},
- {
-  id: 4,
-  title: "Sun Dental Clinic Mekelle Website",
-  description:
-    "A modern clinic website built with React, Express.js, and MongoDB to showcase dental services, provide clinic information, and help patients easily connect with the clinic online.",
-  image: "https://backend.sundentalclinicmekelle.com/uploads/1745585484991.png",
-  tags: ["React", "Express.js", "MongoDB", "Node.js"],
-  link: "https://www.sundentalclinicmekelle.com/",
-    githubLink: "https://github.com/Robel-guesh/SunDental",
+const projectCategoryLabels = {
+  all: "All",
+  website: "Website",
+  mobile: "Mobile",
+  "ui/ux": "UI/UX",
+  desktop: "Desktop",
+} as const;
 
-  hasLink: true,
-  accent: "#001aff",
-  accentBg: "#f5f7ff",
-},
+const projects = [
   
+     {
+    id: 7,
+    title: "Trucksload Logistics Super App",
+    description:
+      "Developed a cross-platform logistics super app for truck load management and transportation services. Implemented shipment management, order tracking, real-time updates, and user-friendly workflows. Collaborated with backend services and APIs to ensure reliable data synchronization. Used Riverpod for state management.",
+    image: "https://trucksload.net/assets/images/GetTheApp.png",
+    tags: ["Flutter", "Dart", "Mobile", "Riverpod"],
+    category: "mobile",
+    link: "https://play.google.com/store/apps/details?id=com.trucksload.logistics",
+    githubLink: "",
+    hasLink: true,
+    accent: "#3b82f6",
+    accentBg: "#eff6ff",
+  },
+  {
+    id: 8,
+    title: "Trucksload Driver App",
+    description:
+      "Developed a dedicated driver application for truck operators. Implemented trip management, route tracking, delivery status updates, and real-time communication features. Optimized application performance and user experience for daily operational use. Used Bloc for state management.",
+    image: "https://play-lh.googleusercontent.com/k556w8Dw-YSqYgAM3h8HF7K7w9mEwyqlPVKQSYaqFSdcKApDWRiV1i4nkmGI_F4KfQlY4chuWc9NdPO7jFRd7A=w480-h960-rw",
+    tags: ["Flutter", "Dart", "Mobile", "BLoC"],
+    category: "mobile",
+    link: "https://play.google.com/store/apps/details?id=com.trucksload.driver",
+    githubLink: "",
+    hasLink: true,
+    accent: "#3b82f6",
+    accentBg: "#eff6ff",
+  },
+  {
+    id: 9,
+    title: "Axumtite Ride Hailing Driver App",
+    description:
+      "Developed a ride-hailing driver application using Flutter. Implemented Clean Architecture, BLoC state management, and dependency injection with GetIt. Integrated real-time trip requests using SignalR, driver status management, location tracking, push notifications with Firebase, and backend APIs. Contributed to performance optimization and feature enhancements.",
+    image: "https://axumiteride.com/uploads//images/corporate.jpeg",
+    tags: ["Flutter", "Clean Architecture", "BLoC","signalR" ],
+    category: "mobile",
+    link: "#",
+    githubLink: "",
+    hasLink: false,
+    accent: "#3b82f6",
+    accentBg: "#eff6ff",
+  },
+  {
+    id: 3,
+    title: "Dr. Tesfa Dermatology Clinic Website",
+    description:
+      "A modern dermatology clinic website built with React, Express.js, and MongoDB to present skincare services, clinic information, and provide an easy way for patients to learn about treatments and contact the clinic.",
+    image: "https://admin.drtesfadermatologyclinic.com/uploads/1772458083913.png",
+    tags: ["React", "Express.js", "MongoDB", "Node.js"],
+    category: "website",
+    link: "https://drtesfadermatologyclinic.com/",
+    githubLink: "https://github.com/Robel-guesh/Dermatology-Website",
+    hasLink: true,
+    accent: "orange",
+    accentBg: "#fff7ed",
+  },
+  {
+    id: 1,
+    title: "IC School Management System",
+    description:
+      "A full-featured school management platform built with React, Express.js, and MongoDB. It manages student registration, class scheduling, attendance tracking, and payment processing through an intuitive dashboard for administrators and staff.",
+    image: "/ic.png",
+    tags: ["React", "Express.js", "MongoDB", "Node.js"],
+    category: "website",
+    link: "https://www.e-student.icdigitals.com/",
+    githubLink: "https://github.com/Robel-guesh/IcSoftwareSolutions",
+    hasLink: true,
+    accent: "#9900cc",
+    accentBg: "#faf5ff",
+  },
+  {
+    id: 2,
+    title: "Lulsoft Company Website",
+    description:
+      "A modern company website built with React, Express.js, and MongoDB to showcase software development services, company projects, and provide a professional online presence for the business.",
+    image: "/lulsoft.png",
+    tags: ["React", "Express.js", "MongoDB", "Node.js"],
+    category: "website",
+    link: "https://www.lulsoft.com/",
+    githubLink: "https://github.com/Robel-guesh/lulsoft",
+    hasLink: true,
+    accent: "#76b400",
+    accentBg: "#f7feff",
+  },
+  
+  {
+    id: 4,
+    title: "Sun Dental Clinic Mekelle Website",
+    description:
+      "A modern clinic website built with React, Express.js, and MongoDB to showcase dental services, provide clinic information, and help patients easily connect with the clinic online.",
+    image: "/sundental.jpg",
+    tags: ["React", "Express.js", "MongoDB", "Node.js"],
+    category: "website",
+    link: "https://www.sundentalclinicmekelle.com/",
+    githubLink: "https://github.com/Robel-guesh/SunDental",
+    hasLink: true,
+    accent: "#001aff",
+    accentBg: "#f5f7ff",
+  },
   {
     id: 5,
     title: "Bank of Abyssinia Mobile App Clone",
     description:
       "A feature-rich mobile banking application clone built with Flutter and Dart. Implements modern UI patterns, account management, transfers, and transaction history.",
-    image: "https://play-lh.googleusercontent.com/18z-FSNTswVVYQrsntytpdqjpdf7oc1IBksbhpOrqeAidzg6XR-iRt0iAnFqD5WAFqya=w526-h296",
+    image: "https://www.bankofabyssinia.com/wp-content/uploads/2024/02/ABYSSINIA_BANK_Classic-Visa-e1715240505908.png",
     tags: ["Flutter", "Dart", "Mobile", "UI/UX"],
+    category: "mobile",
     link: "#",
     githubLink: "https://github.com/Robel-guesh/abysiniamobileapp",
-
     hasLink: false,
     accent: "orange",
-  accentBg: "#fff7ed",
+    accentBg: "#fff7ed",
   },
   {
     id: 6,
@@ -78,17 +132,43 @@ const projects = [
       "A desktop application for managing the traditional Ethiopian EQUB savings system. Built with Python Tkinter, it handles member registration, contributions, and lottery management.",
     image: "https://github.com/Robel-guesh/Equb/blob/main/image/background_photo.png?raw=true",
     tags: ["Python", "Tkinter", "Desktop", "Database"],
+    category: "desktop",
     link: "https://github.com/Robel-guesh/Equb",
     githubLink: "https://github.com/Robel-guesh/Equb",
     hasLink: false,
     accent: "#00DF3F",
-  accentBg: "#f7feff",
+    accentBg: "#f7feff",
+  },
+ 
+  {
+    id: 10,
+    title: "Abner Guesthouse Management Platform",
+    description:
+      "Developed a full-stack guesthouse management platform using React, Vite, Express, and Prisma. Implemented room reservations, restaurant and bar order management, inventory tracking, laundry services, payment processing, audit reporting, staff shift management, role-based access control, and secure JWT authentication. Built comprehensive admin dashboards, guest booking workflows, and operational management tools to streamline hotel operations.",
+    image: "/abner.png",
+    tags: ["React", "Vite", "Express", "Prisma", "Full-stack"],
+    category: "website",
+    link: "https://abnerguesthouse.com/",
+    githubLink: "",
+    hasLink: true,
+    accent: "#16a34a",
+    accentBg: "#f0fdf4",
   },
 ];
 
 export function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState<"all" | "website" | "mobile" | "desktop" | "ui/ux">("all");
+  const projectCategories = ["all", "website", "mobile", "desktop", "ui/ux"] as const;
+  const availableProjectCategories = projectCategories.filter(
+    (category) => category === "all" || projects.some((project) => project.category === category)
+  );
+  const filteredProjects =
+    selectedCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
   return (
-    <section id="projects" style={{ background: "linear-gradient(180deg, #f7feff 0%, #fff7ed 100%)" }} className="py-20">
+    <section id="projects" style={{ background: "linear-gradient(180deg, #f7feff 0%, #FAF8F6 20%, #f7feff 0%)" }} className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -103,37 +183,64 @@ export function Projects() {
           </p>
         </div>
 
+        {availableProjectCategories.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {availableProjectCategories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+                  selectedCategory === category
+                    ? "bg-[#0d2137] text-white"
+                    : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+                }`}
+              >
+                {projectCategoryLabels[category]}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-60 overflow-hidden ">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent" />
                 {/* Overlay links */}
                 <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  {project.hasLink && (
+                  {project.hasLink && project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Open project link"
                       className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur flex items-center justify-center shadow hover:bg-white transition-colors"
                     >
                       <ExternalLink size={14} className="text-[#0d2137]" />
                     </a>
                   )}
-                     
-                     
-                  <a href={project?.githubLink}  target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur flex items-center justify-center shadow hover:bg-white transition-colors cursor-pointer">
-                    <Github size={14} className="text-[#0d2137]" />
-                  </a>
+
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open GitHub repository"
+                      className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur flex items-center justify-center shadow hover:bg-white transition-colors cursor-pointer"
+                    >
+                      <Github size={14} className="text-[#0d2137]" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -147,7 +254,7 @@ export function Projects() {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex j flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}

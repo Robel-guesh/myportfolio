@@ -59,7 +59,7 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #f0f7f4 100%)" }} className="py-20">
+    <section id="skills"  className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-14">

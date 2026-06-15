@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Briefcase, Smartphone, Globe, Calendar } from "lucide-react";
 
 const experiences = [
@@ -32,14 +33,17 @@ const experiences = [
       {
         name: "drtesfadermatologyclinic.com",
         link: "https://drtesfadermatologyclinic.com",
+        category: "website",
       },
       {
         name: "lulsoft.com",
         link: "https://lulsoft.com",
+        category: "website",
       },
       {
         name: "sundentalclinicmekelle.com",
         link: "https://sundentalclinicmekelle.com",
+        category: "website",
       },
     ],
   },
@@ -58,21 +62,36 @@ const experiences = [
     projects: [
       {
         name: "Truck logistics  mobile Supper application",
-        link: "https://play.google.com/store/apps/details?id=com.trucksload.logistics"
+        link: "https://play.google.com/store/apps/details?id=com.trucksload.logistics",
+        category: "mobile",
       },
-       {
+      {
         name: "Truck logistics mobile Driver application",
-        link: "https://play.google.com/store/apps/details?id=com.trucksload.driver"
+        link: "https://play.google.com/store/apps/details?id=com.trucksload.driver",
+        category: "mobile",
       },
       {
         name: "Axumtite Ride hailing application",
         link: "#",
+        category: "mobile",
       },
     ],
   },
 ];
 
 export function Experience() {
+  const [selectedCategory, setSelectedCategory] = useState<"all" | "website" | "mobile" | "ui/ux" | "desktop">("all");
+
+  const experienceCategories = ["website", "mobile", "ui/ux", "desktop"] as const;
+  const availableExpCategories = experienceCategories.filter((category) =>
+    experiences.some((exp) => exp.projects?.some((proj) => proj.category === category))
+  );
+
+  const filteredExperiences =
+    selectedCategory === "all"
+      ? experiences
+      : experiences.filter((exp) => exp.projects?.some((proj) => proj.category === selectedCategory));
+
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,14 +108,49 @@ export function Experience() {
           </p>
         </div>
 
+        {availableExpCategories.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <button
+              type="button"
+              onClick={() => setSelectedCategory("all")}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+                selectedCategory === "all"
+                  ? "bg-[#0d2137] text-white"
+                  : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+              }`}
+            >
+              All
+            </button>
+            {availableExpCategories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+                  selectedCategory === category
+                    ? "bg-[#0d2137] text-white"
+                    : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+                }`}
+              >
+                {category === "ui/ux" ? "UI/UX" : category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
           <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#16a34a] via-[#3b82f6] to-[#8b5cf6] rounded-full hidden sm:block" />
 
           <div className="flex flex-col gap-8">
-            {experiences.map((exp, index) => {
+            {filteredExperiences.map((exp, index) => {
               const Icon = exp.icon;
+              const displayedProjects =
+                selectedCategory === "all" || !exp.projects
+                  ? exp.projects
+                  : exp.projects.filter((proj) => proj.category === selectedCategory);
+
               return (
                 <div key={exp.id} className="relative flex gap-6 sm:pl-16">
                   {/* Timeline dot */}
@@ -134,13 +188,13 @@ export function Experience() {
                     </p>
 
                     {/* Projects */}
-                    {exp.projects && (
+                    {displayedProjects && displayedProjects.length > 0 && (
                       <div className="mb-4">
                         <p className="text-[#9ca3af] text-xs mb-2" style={{ fontWeight: 600 }}>
                           PROJECTS DELIVERED
                         </p>
                         <ul className="flex flex-col gap-1">
-                          {exp.projects.map((proj) => (
+                          {displayedProjects.map((proj) => (
                             <li key={proj.name} className="flex items-center gap-2">
                               <span
                                 className="w-1.5 h-1.5 rounded-full flex-shrink-0"

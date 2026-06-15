@@ -123,20 +123,20 @@ export function Hero() {
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Node.js Expert</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Node.js </span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>React Expert</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>React</span>
                 </div>
                 
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Flutter Expert</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>Flutter</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} className="text-[#16a34a]" />
-                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>UI/UX designer</span>
+                  <span className="text-[#0d2137] text-xs" style={{ fontWeight: 500 }}>UI/UX</span>
                 </div>
               </div>
             </div>
