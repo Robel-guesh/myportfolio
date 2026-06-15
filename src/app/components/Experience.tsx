@@ -29,9 +29,18 @@ const experiences = [
       "Worked on multiple client web projects, delivering modern, responsive websites and web applications for businesses across various industries.",
     tags: ["React", "Node.js", "Web Development"],
     projects: [
-      "drtesfadermatologyclinic.com",
-      "lulsoft.com",
-      "sundentalclinicmekelle.com",
+      {
+        name: "drtesfadermatologyclinic.com",
+        link: "https://drtesfadermatologyclinic.com",
+      },
+      {
+        name: "lulsoft.com",
+        link: "https://lulsoft.com",
+      },
+      {
+        name: "sundentalclinicmekelle.com",
+        link: "https://sundentalclinicmekelle.com",
+      },
     ],
   },
   {
@@ -47,8 +56,18 @@ const experiences = [
       "Developing mobile applications using Flutter for logistics and transportation industry clients. Built a truck logistics mobile app and a ride hailing application.",
     tags: ["Flutter", "Dart", "Mobile", "iOS", "Android"],
     projects: [
-      "Truck logistics mobile application",
-      "Ride hailing application",
+      {
+        name: "Truck logistics  mobile Supper application",
+        link: "https://play.google.com/store/apps/details?id=com.trucksload.logistics"
+      },
+       {
+        name: "Truck logistics mobile Driver application",
+        link: "https://play.google.com/store/apps/details?id=com.trucksload.driver"
+      },
+      {
+        name: "Axumtite Ride hailing application",
+        link: "#",
+      },
     ],
   },
 ];
@@ -122,12 +141,23 @@ export function Experience() {
                         </p>
                         <ul className="flex flex-col gap-1">
                           {exp.projects.map((proj) => (
-                            <li key={proj} className="flex items-center gap-2">
+                            <li key={proj.name} className="flex items-center gap-2">
                               <span
                                 className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                                 style={{ background: exp.color }}
                               />
-                              <span className="text-[#4a5568] text-sm">{proj}</span>
+                              {proj.link ? (
+                                <a
+                                  href={proj.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-[#4a5568] text-sm hover:text-[#0d2137] transition-colors"
+                                >
+                                  {proj.name}
+                                </a>
+                              ) : (
+                                <span className="text-[#4a5568] text-sm">{proj.name}</span>
+                              )}
                             </li>
                           ))}
                         </ul>

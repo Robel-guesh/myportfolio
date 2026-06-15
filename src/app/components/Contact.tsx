@@ -104,16 +104,16 @@ export function Contact() {
             </div>
 
             {/* CTA Banner */}
-            <div className="bg-[#0d2137] rounded-2xl p-6 text-white">
-              <h3 style={{ fontSize: "1.1rem", fontWeight: 700, lineHeight: 1.3 }}>
+            <div className="bg-[#F9FFFB] rounded-3xl border-[#21a13a] border-2 p-6 text-white">
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 700, lineHeight: 1.3 }} className="text-[#16a34a]">
                 Ready to build something great together?
               </h3>
-              <p className="text-white/70 text-sm mt-2 mb-5">
+              <p className="text-[#16a34a] text-sm mt-2 mb-5">
                 Let's discuss your project and see how I can help you ship faster.
               </p>
               <a
                 href="mailto:robelguesh21@gmail.com"
-                className="inline-flex items-center gap-2 bg-[#16a34a] hover:bg-[#15803d] text-white px-5 py-2.5 rounded-xl text-sm transition-colors"
+                className="inline-flex items-center gap-2 bg-[#21a13a] hover:bg-[#15803d] text-white px-5 py-2.5 rounded-xl text-sm transition-colors"
                 style={{ fontWeight: 600 }}
               >
                 <Mail size={15} />

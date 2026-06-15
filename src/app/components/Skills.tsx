@@ -112,22 +112,7 @@ export function Skills() {
                   ))}
                 </div>
 
-                {/* Progress indicator */}
-                <div className="mt-5 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[#9ca3af] text-xs" style={{ fontWeight: 500 }}>Proficiency</span>
-                    <span className="text-xs" style={{ color: cat.color, fontWeight: 600 }}>Advanced</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-700"
-                      style={{
-                        width: cat.id === "backend" ? "92%" : cat.id === "mobile" ? "88%" : cat.id === "databases" ? "85%" : "80%",
-                        background: cat.color,
-                      }}
-                    />
-                  </div>
-                </div>
+               
               </div>
             );
           })}

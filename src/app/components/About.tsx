@@ -21,13 +21,13 @@ export function About() {
         {/* Section Header */}
         <div className="text-center mb-14">
           <span className="inline-block text-[#16a34a] text-sm mb-2 tracking-widest uppercase" style={{ fontWeight: 600 }}>
-            About Me
+            let me tell you a bit
           </span>
           <h2 className="text-[#0d2137]" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800 }}>
-            Who I Am
+             about Robel
           </h2>
           <p className="mt-3 text-[#6b7280] max-w-xl mx-auto text-sm">
-            Passionate developer building real solutions with modern technology
+            I am software developer who builds real solutions for real-world problems using modern technology
           </p>
         </div>
 
