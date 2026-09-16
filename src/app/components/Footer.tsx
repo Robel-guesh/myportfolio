@@ -1,9 +1,6 @@
-import { Code2, Github, Mail, ArrowUp } from "lucide-react";
+import { Github, Mail, ArrowUp } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
-};
+import { scrollToSection } from "../utils/navigation";
 
 const navLinks = [
   { label: "Home", id: "home" },
@@ -39,7 +36,7 @@ export function Footer() {
               {navLinks.map((link) => (
                 <button
                   key={link.id}
-                  onClick={() => scrollTo(link.id)}
+                  onClick={() => scrollToSection(link.id)}
                   className="text-left text-white/70 hover:text-[#16a34a] text-sm transition-colors cursor-pointer"
                   style={{ fontWeight: 500 }}
                 >
@@ -58,17 +55,15 @@ export function Footer() {
               <a
                 href="https://github.com/Robel-guesh/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-white/70 hover:text-[#16a34a] text-sm transition-colors"
-                style={{ fontWeight: 500 }}
               >
                 <Github size={15} />
-                github.com/Robel-guesh
+                GitHub
               </a>
               <a
                 href="mailto:robelguesh21@gmail.com"
                 className="flex items-center gap-2 text-white/70 hover:text-[#16a34a] text-sm transition-colors"
-                style={{ fontWeight: 500 }}
               >
                 <Mail size={15} />
                 robelguesh21@gmail.com
@@ -83,7 +78,7 @@ export function Footer() {
             © {new Date().getFullYear()} Robel Guesh Tsehaye. All rights reserved.
           </p>
           <button
-            onClick={() => scrollTo("home")}
+            onClick={() => scrollToSection("home")}
             className="flex items-center gap-1.5 text-white/40 hover:text-[#16a34a] text-sm transition-colors cursor-pointer"
             style={{ fontWeight: 500 }}
           >

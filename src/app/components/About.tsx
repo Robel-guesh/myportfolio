@@ -24,7 +24,7 @@ export function About() {
             let me tell you a bit
           </span>
           <h2 className="text-[#0d2137]" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800 }}>
-             about Robel
+            about Robel
           </h2>
           <p className="mt-3 text-[#6b7280] max-w-xl mx-auto text-sm">
             I am software developer who builds real solutions for real-world problems using modern technology
@@ -38,7 +38,7 @@ export function About() {
               <div className="w-14 h-14  flex items-center justify-center  flex-shrink-0">
                 {/* <User size={24} className="text-white" /> */}
                 <ImageWithFallback src='/robel.png' alt="robel"></ImageWithFallback>
-              
+
               </div>
               <div>
                 <h3 className="text-[#0d2137]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>
@@ -58,7 +58,7 @@ export function About() {
               <div className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
                 <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
                   <MapPin size={15} className="text-[#16a34a]" />
-                  </div>
+                </div>
                 <div>
                   <p className="text-[#9ca3af] text-xs" style={{ fontWeight: 500 }}>Location</p>
                   <p className="text-[#0d2137] text-sm" style={{ fontWeight: 600 }}>{aboutData.location}</p>

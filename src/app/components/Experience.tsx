@@ -8,9 +8,9 @@ const experiences = [
     role: "Software Developer",
     period: "Jan 2024 – Aug 2025",
     icon: Briefcase,
-     color: "#9900cc",
+    color: "#9900cc",
     bg: "#f5f3ff",
-    
+
     border: "#bbf7d0",
     description:
       "Developed IC School Management System using React, Express.js and MongoDB. Handled student registration, scheduling, attendance tracking, and payment management.",
@@ -24,7 +24,7 @@ const experiences = [
     icon: Globe,
     color: "#16a34a",
     bg: "#f0fdf4",
-  
+
     border: "#bfdbfe",
     description:
       "Worked on multiple client web projects, delivering modern, responsive websites and web applications for businesses across various industries.",
@@ -53,7 +53,7 @@ const experiences = [
     role: "Mobile App Developer",
     period: "Sep 2025 – Present",
     icon: Smartphone,
-     color: "#3b82f6",
+    color: "#3b82f6",
     bg: "#eff6ff",
     border: "#ddd6fe",
     description:
@@ -71,9 +71,19 @@ const experiences = [
         category: "mobile",
       },
       {
-        name: "Axumtite Ride hailing application",
-        link: "#",
+        name: "Wanza Express Customer application",
+        link: "https://play.google.com/store/apps/details?id=com.courier.wanza",
         category: "mobile",
+      },
+      {
+        name: "Axumtite Ride hailing application",
+        link: "https://play.google.com/store/apps/details?id=com.axumite.partner",
+        category: "mobile",
+      },
+      {
+        name: "Niyat Consultancy Website",
+        link: "https://niyatconsultancy.com",
+        category: "website",
       },
     ],
   },
@@ -113,11 +123,10 @@ export function Experience() {
             <button
               type="button"
               onClick={() => setSelectedCategory("all")}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
-                selectedCategory === "all"
-                  ? "bg-[#0d2137] text-white"
-                  : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition ${selectedCategory === "all"
+                ? "bg-[#0d2137] text-white"
+                : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+                }`}
             >
               All
             </button>
@@ -126,11 +135,10 @@ export function Experience() {
                 key={category}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
-                  selectedCategory === category
-                    ? "bg-[#0d2137] text-white"
-                    : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${selectedCategory === category
+                  ? "bg-[#0d2137] text-white"
+                  : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+                  }`}
               >
                 {category === "ui/ux" ? "UI/UX" : category.charAt(0).toUpperCase() + category.slice(1)}
               </button>

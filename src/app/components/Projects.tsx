@@ -11,8 +11,8 @@ const projectCategoryLabels = {
 } as const;
 
 const projects = [
-  
-     {
+
+  {
     id: 7,
     title: "Trucksload Logistics Super App",
     description:
@@ -31,7 +31,7 @@ const projects = [
     title: "Trucksload Driver App",
     description:
       "Developed a dedicated driver application for truck operators. Implemented trip management, route tracking, delivery status updates, and real-time communication features. Optimized application performance and user experience for daily operational use. Used Bloc for state management.",
-    image: "https://play-lh.googleusercontent.com/k556w8Dw-YSqYgAM3h8HF7K7w9mEwyqlPVKQSYaqFSdcKApDWRiV1i4nkmGI_F4KfQlY4chuWc9NdPO7jFRd7A=w480-h960-rw",
+    image: "https://trucksload.net/assets/images/HeroImage.png",
     tags: ["Flutter", "Dart", "Mobile", "BLoC"],
     category: "mobile",
     link: "https://play.google.com/store/apps/details?id=com.trucksload.driver",
@@ -40,19 +40,34 @@ const projects = [
     accent: "#3b82f6",
     accentBg: "#eff6ff",
   },
+
   {
     id: 9,
     title: "Axumtite Ride Hailing Driver App",
     description:
       "Developed a ride-hailing driver application using Flutter. Implemented Clean Architecture, BLoC state management, and dependency injection with GetIt. Integrated real-time trip requests using SignalR, driver status management, location tracking, push notifications with Firebase, and backend APIs. Contributed to performance optimization and feature enhancements.",
     image: "https://axumiteride.com/uploads//images/corporate.jpeg",
-    tags: ["Flutter", "Clean Architecture", "BLoC","signalR" ],
+    tags: ["Flutter", "Clean Architecture", "BLoC", "signalR"],
     category: "mobile",
-    link: "#",
+    link: "https://play.google.com/store/apps/details?id=com.axumite.partner",
     githubLink: "",
-    hasLink: false,
+    hasLink: true,
     accent: "#3b82f6",
     accentBg: "#eff6ff",
+  },
+  {
+    id: 11,
+    title: "Wanza Express Customer App",
+    description:
+      "Developed a customer-facing courier and parcel delivery mobile application using Flutter. Features include seamless shipment booking, real-time package tracking, pickup/delivery scheduling, fare estimation, and secure authentication.",
+    image: "https://cms-portal.dev.niyatconsultancy.com/images/courier-Woman.jpg",
+    tags: ["Flutter", "Dart", "Mobile", "Courier"],
+    category: "mobile",
+    link: "https://play.google.com/store/apps/details?id=com.courier.wanza",
+    githubLink: "",
+    hasLink: true,
+    accent: "#ca8a04",
+    accentBg: "#fefce8",
   },
   {
     id: 3,
@@ -67,6 +82,34 @@ const projects = [
     hasLink: true,
     accent: "orange",
     accentBg: "#fff7ed",
+  },
+  {
+    id: 4,
+    title: "Abner Guesthouse Management Platform",
+    description:
+      "Developed a full-stack guesthouse management platform using React, Vite, Express, and Prisma. Implemented room reservations, restaurant and bar order management, inventory tracking, laundry services, payment processing, audit reporting, staff shift management, role-based access control, and secure JWT authentication. Built comprehensive admin dashboards, guest booking workflows, and operational management tools to streamline hotel operations.",
+    image: "/abner.png",
+    tags: ["React", "Vite", "Express", "Prisma", "Full-stack"],
+    category: "website",
+    link: "https://abnerguesthouse.com",
+    githubLink: "",
+    hasLink: true,
+    accent: "#16a34a",
+    accentBg: "#f0fdf4",
+  },
+  {
+    id: 6,
+    title: "Niyat Consultancy Website",
+    description:
+      "Developed a modern corporate website and consulting platform using React, Vite, Express, and Prisma. Built responsive service showcases, client inquiry workflows, and an intuitive admin interface to highlight consultancy offerings and streamline client engagement.",
+    image: "/niyat.png",
+    tags: ["React", "Vite", "Express", "Prisma", "Full-stack"],
+    category: "website",
+    link: "https://niyatconsultancy.com",
+    githubLink: "",
+    hasLink: true,
+    accent: "#3b82f6",
+    accentBg: "#eff6ff",
   },
   {
     id: 1,
@@ -96,9 +139,9 @@ const projects = [
     accent: "#76b400",
     accentBg: "#f7feff",
   },
-  
+
   {
-    id: 4,
+    id: 10,
     title: "Sun Dental Clinic Mekelle Website",
     description:
       "A modern clinic website built with React, Express.js, and MongoDB to showcase dental services, provide clinic information, and help patients easily connect with the clinic online.",
@@ -126,7 +169,7 @@ const projects = [
     accentBg: "#fff7ed",
   },
   {
-    id: 6,
+    id: 12,
     title: "EQUB Management System",
     description:
       "A desktop application for managing the traditional Ethiopian EQUB savings system. Built with Python Tkinter, it handles member registration, contributions, and lottery management.",
@@ -139,21 +182,8 @@ const projects = [
     accent: "#00DF3F",
     accentBg: "#f7feff",
   },
- 
-  {
-    id: 10,
-    title: "Abner Guesthouse Management Platform",
-    description:
-      "Developed a full-stack guesthouse management platform using React, Vite, Express, and Prisma. Implemented room reservations, restaurant and bar order management, inventory tracking, laundry services, payment processing, audit reporting, staff shift management, role-based access control, and secure JWT authentication. Built comprehensive admin dashboards, guest booking workflows, and operational management tools to streamline hotel operations.",
-    image: "/abner.png",
-    tags: ["React", "Vite", "Express", "Prisma", "Full-stack"],
-    category: "website",
-    link: "https://abnerguesthouse.com/",
-    githubLink: "",
-    hasLink: true,
-    accent: "#16a34a",
-    accentBg: "#f0fdf4",
-  },
+
+
 ];
 
 export function Projects() {
@@ -190,11 +220,10 @@ export function Projects() {
                 key={category}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
-                  selectedCategory === category
-                    ? "bg-[#0d2137] text-white"
-                    : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${selectedCategory === category
+                  ? "bg-[#0d2137] text-white"
+                  : "bg-white border border-gray-200 text-[#4b5563] hover:bg-gray-50"
+                  }`}
               >
                 {projectCategoryLabels[category]}
               </button>
@@ -286,7 +315,11 @@ export function Projects() {
                     }}
                   >
                     <ExternalLink size={14} />
-                    Visit Website
+                    {project.link.includes("play.google.com")
+                      ? "View on Play Store"
+                      : project.category === "mobile"
+                        ? "View App"
+                        : "Visit Website"}
                   </a>
                 ) : (
                   <div

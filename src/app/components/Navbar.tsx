@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { scrollToSection, SECTION_TO_PATH } from "../utils/navigation";
+
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
+  { label: "Contact", id: "contact" },
 ];
 
 export function Navbar() {
@@ -19,23 +21,22 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = navLinks.map((l) => l.href.replace("#", ""));
+      const sections = navLinks.map((l) => l.id);
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 100) {
+        if (el && window.scrollY >= el.offsetTop - 120) {
           setActive(id);
           break;
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (href: string) => {
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (id: string) => {
+    scrollToSection(id, true);
+    setActive(id);
     setMobileOpen(false);
   };
 
@@ -49,7 +50,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
        
           <button
-            onClick={() => scrollTo("#home")}
+            onClick={() => handleNavClick("home")}
             className="flex items-center gap-2 group cursor-pointer"
           >
             <div className="w-12 h-12 rounded-lg flex items-center justify-center shadow-sm">
@@ -63,29 +64,26 @@ export function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const id = link.href.replace("#", "");
-              return (
-                <button
-                  key={link.label}
-                  onClick={() => scrollTo(link.href)}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-all cursor-pointer ${
-                    active === id
-                      ? "text-[#16a34a] bg-green-50"
-                      : "text-[#4a5568] hover:text-[#0d2137] hover:bg-gray-50"
-                  }`}
-                  style={{ fontWeight: active === id ? 600 : 500 }}
-                >
-                  {link.label}
-                </button>
-              );
-            })}
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.id)}
+                className={`px-3 py-1.5 rounded-lg text-sm transition-all cursor-pointer ${
+                  active === link.id
+                    ? "text-[#16a34a] bg-green-50"
+                    : "text-[#4a5568] hover:text-[#0d2137] hover:bg-gray-50"
+                }`}
+                style={{ fontWeight: active === link.id ? 600 : 500 }}
+              >
+                {link.label}
+              </button>
+            ))}
           </div>
 
           {/* CTA */}
           <div className="hidden md:block">
             <button
-              onClick={() => scrollTo("#contact")}
+              onClick={() => handleNavClick("contact")}
               className="bg-[#0d2137] hover:bg-[#16a34a] text-white px-5 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer shadow-sm"
               style={{ fontWeight: 600 }}
             >
@@ -107,25 +105,22 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 py-3 shadow-lg">
           <div className="flex flex-col gap-1">
-            {navLinks.map((link) => {
-              const id = link.href.replace("#", "");
-              return (
-                <button
-                  key={link.label}
-                  onClick={() => scrollTo(link.href)}
-                  className={`text-left px-3 py-2 rounded-lg text-sm cursor-pointer ${
-                    active === id
-                      ? "text-[#16a34a] bg-green-50"
-                      : "text-[#4a5568] hover:bg-gray-50"
-                  }`}
-                  style={{ fontWeight: 500 }}
-                >
-                  {link.label}
-                </button>
-              );
-            })}
+            {navLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.id)}
+                className={`text-left px-3 py-2 rounded-lg text-sm cursor-pointer ${
+                  active === link.id
+                    ? "text-[#16a34a] bg-green-50"
+                    : "text-[#4a5568] hover:bg-gray-50"
+                }`}
+                style={{ fontWeight: 500 }}
+              >
+                {link.label}
+              </button>
+            ))}
             <button
-              onClick={() => scrollTo("#contact")}
+              onClick={() => handleNavClick("contact")}
               className="mt-2 bg-[#0d2137] text-white px-5 py-2.5 rounded-lg text-sm cursor-pointer"
               style={{ fontWeight: 600 }}
             >

@@ -1,14 +1,10 @@
-import { ArrowRight, Download, CheckCircle2, TrendingUp, Briefcase, CheckCircle2Icon, LucideCheckCircle } from "lucide-react";
+import { ArrowRight, Download, CheckCircle2, LucideCheckCircle, Briefcase, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { scrollToSection } from "../utils/navigation";
 
 const heroImage1 = '/hero.png';
 const heroImage2 = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFwdG9wfGVufDB8fDB8fHww";
 const heroImage3 = "https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjBjb2RpbmclMjB3b3Jrc3BhY2UlMjBtb2Rlcm58ZW58MXx8fHwxNzcyNjQ5MTU0fDA&ixlib=rb-4.1.0&q=80&w=1080";
-
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
-};
 
 export function Hero() {
   return (
@@ -52,7 +48,7 @@ export function Hero() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-3">
               <button
-                onClick={() => scrollTo("projects")}
+                onClick={() => scrollToSection("projects")}
                 className="flex items-center gap-2 bg-[#0d2137] hover:bg-[#16a34a] text-white px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
                 style={{ fontWeight: 600 }}
               >
